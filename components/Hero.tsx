@@ -9,6 +9,10 @@ export default function Hero() {
   const lineRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
+  }, [])
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       if (lineRef.current) lineRef.current.style.transform = 'translateY(0)'
     }, 500)
@@ -16,7 +20,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative z-[10] min-h-[100svh] flex flex-col justify-end px-6 md:px-16 pb-16 md:pb-24 overflow-hidden">
+    <section className="relative z-[10] flex flex-col justify-end px-6 md:px-16 pb-16 md:pb-24 overflow-hidden" style={{ minHeight: 'calc(var(--vh, 1svh) * 100)' }}>
 
       {/* Hero video — desktop */}
       <div className="absolute inset-0 z-0">
@@ -119,14 +123,6 @@ export default function Hero() {
             </span>
           </a>
         </div>
-      </div>
-
-      {/* Scroll hint */}
-      <div
-        className="absolute bottom-8 right-6 md:right-16 flex flex-col items-center gap-2 z-[2]"
-        style={{ animation: 'fade-up 0.8s cubic-bezier(0.32,0.72,0,1) 1.6s both' }}
-      >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-gold/40 to-transparent animate-pulse" />
       </div>
 
     </section>
