@@ -1,12 +1,15 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { WordReveal } from './Reveal'
 
 export default function Hero() {
   const t = useTranslations('hero')
   const lineRef = useRef<HTMLDivElement>(null)
+  const videoDesktopRef = useRef<HTMLVideoElement>(null)
+  const videoMobileRef = useRef<HTMLVideoElement>(null)
+  const [isMuted, setIsMuted] = useState(true)
 
   useEffect(() => {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
@@ -19,6 +22,13 @@ export default function Hero() {
     return () => clearTimeout(timer)
   }, [])
 
+  function toggleMute() {
+    const next = !isMuted
+    if (videoDesktopRef.current) videoDesktopRef.current.muted = next
+    if (videoMobileRef.current) videoMobileRef.current.muted = next
+    setIsMuted(next)
+  }
+
   return (
     <section className="relative z-[10] flex flex-col justify-end px-6 md:px-16 pb-16 md:pb-24 overflow-hidden" style={{ minHeight: 'calc(var(--vh, 1svh) * 100)' }}>
 
@@ -26,6 +36,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         {/* Desktop */}
         <video
+          ref={videoDesktopRef}
           autoPlay
           loop
           playsInline
@@ -38,6 +49,7 @@ export default function Hero() {
 
         {/* Mobile */}
         <video
+          ref={videoMobileRef}
           autoPlay
           loop
           playsInline
@@ -78,6 +90,26 @@ export default function Hero() {
           }}
         />
       </div>
+
+      {/* Mute toggle */}
+      <button
+        onClick={toggleMute}
+        className="absolute bottom-8 left-6 md:left-16 z-[3] w-9 h-9 rounded-full border border-white/20 bg-ink/60 backdrop-blur-sm text-cream/60 hover:text-cream transition-all duration-300 flex items-center justify-center"
+        aria-label={isMuted ? 'Включить звук' : 'Выключить звук'}
+      >
+        {isMuted ? (
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <line x1="23" y1="9" x2="17" y2="15"/>
+            <line x1="17" y1="9" x2="23" y2="15"/>
+          </svg>
+        ) : (
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+        )}
+      </button>
 
       {/* Main content */}
       <div className="relative z-[2] max-w-5xl">
