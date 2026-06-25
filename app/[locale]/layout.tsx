@@ -8,6 +8,11 @@ import Cursor from '@/components/Cursor'
 import PageLoader from '@/components/PageLoader'
 import VideoBackground from '@/components/VideoBackground'
 import ScrollToTop from '@/components/ScrollToTop'
+import LocaleHtmlSync from '@/components/LocaleHtmlSync'
+
+function safeJsonLd(obj: unknown): string {
+  return JSON.stringify(obj).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026')
+}
 
 const locales = ['en', 'ru', 'ar']
 
@@ -125,43 +130,40 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} dir={dir}>
-      <head>
-        <link rel="icon" href="/logo.png" type="image/png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+    <>
+      <LocaleHtmlSync lang={locale} dir={dir} />
+      <link rel="icon" href="/logo.png" type="image/png" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet"
+      />
+      {locale === 'ar' && (
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        {locale === 'ar' && (
-          <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500&display=swap"
-            rel="stylesheet"
-          />
-        )}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }}
-        />
-        <Script
-          type="module"
-          src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
-          strategy="lazyOnload"
-        />
-      </head>
-      <body>
-        <ScrollToTop />
-        <VideoBackground />
-        <PageLoader />
-        <SmoothScroll />
-        <Cursor />
-        <NextIntlClientProvider messages={messages}>
-          <div className="relative z-[10]">
-            {children}
-          </div>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(orgLd) }}
+      />
+      <Script
+        type="module"
+        src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
+        strategy="lazyOnload"
+      />
+      <ScrollToTop />
+      <VideoBackground />
+      <PageLoader />
+      <SmoothScroll />
+      <Cursor />
+      <NextIntlClientProvider messages={messages}>
+        <div className="relative z-[10]">
+          {children}
+        </div>
+      </NextIntlClientProvider>
+    </>
   )
 }

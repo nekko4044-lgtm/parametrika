@@ -1,15 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import { WordReveal } from './Reveal'
 
 export default function Hero() {
   const t = useTranslations('hero')
   const lineRef = useRef<HTMLDivElement>(null)
-  const videoDesktopRef = useRef<HTMLVideoElement>(null)
-  const videoMobileRef = useRef<HTMLVideoElement>(null)
-  const [isMuted, setIsMuted] = useState(true)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,37 +15,34 @@ export default function Hero() {
     return () => clearTimeout(timer)
   }, [])
 
-  function toggleMute() {
-    const nextMuted = !isMuted
-    if (videoDesktopRef.current) videoDesktopRef.current.muted = nextMuted
-    if (videoMobileRef.current) videoMobileRef.current.muted = nextMuted
-    setIsMuted(nextMuted)
-  }
-
   return (
     <section className="relative z-[10] min-h-[100svh] flex flex-col justify-end px-6 md:px-16 pb-16 md:pb-24 overflow-hidden">
 
       {/* Hero video — desktop */}
       <div className="absolute inset-0 z-0">
+        {/* Desktop */}
         <video
-          ref={videoDesktopRef}
-          src="/videos/hero-desktop.mov"
           autoPlay
           loop
           playsInline
           muted
           className="hidden md:block absolute inset-0 w-full h-full object-cover object-center"
-        />
+        >
+          <source src="/videos/hero-desktop.webm" type="video/webm" />
+          <source src="/videos/hero-desktop.mp4" type="video/mp4" />
+        </video>
+
         {/* Mobile */}
         <video
-          ref={videoMobileRef}
-          src="/videos/hero-mobile.mov"
           autoPlay
           loop
           playsInline
           muted
           className="block md:hidden absolute inset-0 w-full h-full object-cover object-center"
-        />
+        >
+          <source src="/videos/hero-mobile.webm" type="video/webm" />
+          <source src="/videos/hero-mobile.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/60 to-ink/88" />
       </div>
 
@@ -126,28 +120,6 @@ export default function Hero() {
           </a>
         </div>
       </div>
-
-      {/* Mute toggle */}
-      <button
-        onClick={toggleMute}
-        aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-        className="absolute bottom-8 left-6 md:left-16 z-[3] w-9 h-9 rounded-full border border-white/20 bg-ink/60 backdrop-blur-sm flex items-center justify-center text-cream/60 hover:text-cream transition-colors duration-300"
-        style={{ animation: 'fade-up 0.8s cubic-bezier(0.32,0.72,0,1) 1.8s both' }}
-      >
-        {isMuted ? (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-            <line x1="23" y1="9" x2="17" y2="15"/>
-            <line x1="17" y1="9" x2="23" y2="15"/>
-          </svg>
-        ) : (
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-          </svg>
-        )}
-      </button>
 
       {/* Scroll hint */}
       <div
