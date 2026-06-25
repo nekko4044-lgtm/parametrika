@@ -1,0 +1,340 @@
+{
+  "nav": {
+    "catalog": "Collections",
+    "production": "Production",
+    "why": "About Us",
+    "contact": "Contact",
+    "close": "Close"
+  },
+  "seo": {
+    "title": "Parametrika — Bespoke Collections | Dubai",
+    "description": "Bespoke parametric objects — tables, chairs, consoles and architectural panels — custom-made for UAE villas, hotels and signature spaces."
+  },
+  "hero": {
+    "eyebrow": "UAE · The Art of Parametric Design",
+    "headline1": "Engineered",
+    "headline2": "to Be Rare",
+    "sub": "Parametric collections for interiors where exclusivity, architecture and impeccable execution are valued.",
+    "cta": "Request a Quote",
+    "location": "Collection"
+  },
+  "marquee": {
+    "i1": "White Glove Delivery",
+    "i2": "Bespoke Parametric Collections",
+    "i3": "Individual Craftsmanship",
+    "i4": "Handmade — Piece by Piece",
+    "i5": "For Villas, Penthouses & Hotels",
+    "i6": "Exclusively in the UAE",
+    "i7": "Limited Collections",
+    "i8": "Collector-Grade Interior Design",
+    "i9": "Personal Project Accompaniment",
+    "i10": "Art in Architectural Form"
+  },
+  "about": {
+    "eyebrow": "Our Philosophy",
+    "headline": "Created for Spaces Without Compromise",
+    "body": "Parametrika is Dubai's only parametric furniture house.\n\nBespoke collections for private residences, five-star hotels and signature spaces. Furniture you cannot buy off the shelf — made to order, made for you.",
+    "stat1": "Categories",
+    "stat1desc": "Bespoke interior objects and architectural panels",
+    "stat2": "Creation Steps",
+    "stat2desc": "from sketch to installation",
+    "stat3": "Custom Projects",
+    "stat3desc": "completed to individual specifications",
+    "nda": "By client agreement, project photography is available on request."
+  },
+  "catalog": {
+    "eyebrow": "Collections",
+    "headline": "The Collection",
+    "sub": "Every piece is created individually, reflecting the architecture of the space and the character of its owner.",
+    "view": "Explore Collection",
+    "metaTitle": "Catalog — Bespoke Collections | Parametrika",
+    "metaDescription": "Bespoke parametric collections: tables, chairs, consoles and architectural panels — CNC-milled and handmade in Dubai."
+  },
+  "cat": {
+    "tables": {
+      "name": "For private interiors, hotels and executive spaces",
+      "order": "01",
+      "tagline": "Four groups. One standard.",
+      "tags": "Dining · Coffee · Office · Bar",
+      "metaTitle": "Parametric Table Collections — Bespoke | Parametrika",
+      "metaDescription": "Bespoke parametric table collections — ZAHA, ZAHIR, VILAR, RAFAN, DUNE, RAYAN — CNC-milled from multi-layer engineered solid wood, handmade for UAE villas, hotels and executive spaces.",
+      "sub": {
+        "dining": {
+          "label": "Dining Group",
+          "name": "Dining Group",
+          "body": "Parametric dining table collections — ZAHA (8 seats), ZAHIR (6 seats) and VILAR (4 seats) — each with a signature sculptural base and premium tempered glass top. Standard configurations are set, yet every size and seating arrangement is made to client specification.",
+          "tags": "ZAHA · 8 seats · ZAHIR · 6 seats · VILAR · 4 seats",
+          "spec": {
+            "material": "Base",
+            "materialV": "Multi-layer engineered solid wood, hand-assembled",
+            "top": "Top",
+            "topV": "Premium tempered glass. Two shades: Neutral and Cappuccino",
+            "finish": "Finish",
+            "finishV": "Premium VITEC lacquer, Turkey",
+            "size": "Size",
+            "sizeV": "Any size and seating configuration to client specification"
+          },
+          "apps": {
+            "a1": "Dining rooms",
+            "a2": "Hotel restaurants",
+            "a3": "Private villas",
+            "a4": "Lounge spaces"
+          }
+        },
+        "coffee": {
+          "label": "Coffee Tables",
+          "name": "Coffee Tables",
+          "body": "Parametric coffee table collections — RAFAN, DUNE and RAYAN. The sculptural base paired with a glass top creates a striking centrepiece for living rooms and lounge areas. Standard set of 4 pieces. Custom size to client specification.",
+          "tags": "RAFAN · DUNE · RAYAN · 4 pieces",
+          "spec": {
+            "material": "Base",
+            "materialV": "Multi-layer engineered solid wood, hand-assembled",
+            "top": "Top",
+            "topV": "Premium tempered glass. Two shades: Neutral and Cappuccino",
+            "finish": "Finish",
+            "finishV": "Premium VITEC lacquer, Turkey",
+            "size": "Size",
+            "sizeV": "Any size and configuration to client specification"
+          },
+          "apps": {
+            "a1": "Living rooms",
+            "a2": "Hotel lobbies",
+            "a3": "Private villas",
+            "a4": "Lounge areas"
+          }
+        },
+        "office": {
+          "label": "Office",
+          "name": "Office",
+          "body": "Parametric office tables from the VILAR and ZAHA collections — for executive offices, boardrooms and home studies. Sculptural form, cable management on request. Custom size to client specification.",
+          "tags": "VILAR · ZAHA · Executive",
+          "spec": {
+            "material": "Base",
+            "materialV": "Multi-layer engineered solid wood, hand-assembled",
+            "top": "Top",
+            "topV": "Tempered glass or solid wood",
+            "finish": "Finish",
+            "finishV": "Premium VITEC lacquer, Turkey",
+            "size": "Size",
+            "sizeV": "Any size to client specification"
+          },
+          "apps": {
+            "a1": "Executive offices",
+            "a2": "Boardrooms",
+            "a3": "Home studies",
+            "a4": "Representative spaces"
+          }
+        },
+        "bar": {
+          "label": "Bar Collection",
+          "name": "Bar Collection",
+          "body": "The RAFAN bar collection — a parametric bar table paired with tall bar stools. Sculptural engineered-wood base, bar-counter height, custom configuration to client specification.",
+          "tags": "RAFAN · Bar height · Stools + table",
+          "spec": {
+            "material": "Base",
+            "materialV": "Multi-layer engineered solid wood, hand-assembled",
+            "top": "Top",
+            "topV": "Tempered glass or solid wood",
+            "height": "Height",
+            "heightV": "Bar height (counter ~105–115 cm · stool ~75–80 cm)",
+            "finish": "Finish",
+            "finishV": "Premium VITEC lacquer, Turkey",
+            "size": "Size",
+            "sizeV": "Any size and configuration to client specification"
+          },
+          "apps": {
+            "a1": "Kitchen islands",
+            "a2": "Home bars",
+            "a3": "Restaurants & cafés",
+            "a4": "Lounge & club spaces"
+          }
+        }
+      }
+    },
+    "chairs": {
+      "name": "Collection SAHARA",
+      "order": "02",
+      "tagline": "The SAHARA.",
+      "tags": "SAHARA",
+      "metaTitle": "SAHARA Rocking Chair — Parametric | Parametrika",
+      "metaDescription": "SAHARA — the parametric rocking chair by Parametrika. Handmade from CNC-milled multi-layer engineered solid wood with orthopedic design and premium VITEC lacquer finish.",
+      "sub": {
+        "sahara": {
+          "label": "SAHARA",
+          "name": "SAHARA Rocking Chair",
+          "body": "SAHARA rocking chair — the embodiment of flowing parametric geometry, where every line serves comfort and aesthetics. The sculptural form gently supports the body, creating a natural sense of relaxation and a gentle rocking motion.\n\nDesigned for reading, rest and quiet moments, the chair becomes not just a piece of furniture but a defining accent in the interior. Handmade assembly, flawless geometry and attention to every detail make SAHARA a work of art that sits equally at home in apartments, private villas, lounge areas and executive spaces.",
+          "tags": "Rocking Chair · Orthopedic · Custom",
+          "spec": {
+            "material": "Material",
+            "materialV": "Multi-layer engineered solid wood, hand-assembled",
+            "finish": "Finish",
+            "finishV": "Premium VITEC lacquer, Turkey",
+            "size": "Size",
+            "sizeV": "Custom on request"
+          },
+          "apps": {
+            "a1": "Private residences",
+            "a2": "Hotel lounges",
+            "a3": "Villa terraces",
+            "a4": "Wellness spaces"
+          }
+        }
+      }
+    },
+    "consoles": {
+      "name": "Consoles",
+      "order": "03",
+      "tagline": "Minimal footprint, maximum presence.",
+      "tags": "Entry Group",
+      "metaTitle": "Parametric Console Tables — Bespoke | Parametrika",
+      "metaDescription": "Bespoke parametric console tables, handmade from CNC-milled multi-layer engineered solid wood. Custom size and finish for UAE villas, hotels and signature entryways.",
+      "body": "Console tables for entryways, hallways and living rooms. A long, slender silhouette on a sculptural layered base — handmade from multi-layer engineered solid wood. Wall-mounted or freestanding.",
+      "spec": {
+        "material": "Material",
+        "materialV": "Multi-layer engineered solid wood, hand-assembled",
+        "finish": "Finish",
+        "finishV": "Custom colour, BETEK lacquer",
+        "mount": "Style",
+        "mountV": "Wall-mounted or freestanding",
+        "size": "Size",
+        "sizeV": "Custom on request"
+      },
+      "apps": {
+        "a1": "Entryways",
+        "a2": "Hallways",
+        "a3": "Living rooms",
+        "a4": "Hotel lobbies"
+      }
+    },
+    "nightstands": {
+      "name": "Nightstands",
+      "order": "04",
+      "tagline": "Bedside geometry. Quiet and precise.",
+      "tags": "Bedroom · Custom Finish",
+      "metaTitle": "Parametric Nightstands — Bespoke Bedroom Furniture | Parametrika",
+      "metaDescription": "Bespoke parametric nightstands, handmade from CNC-milled multi-layer engineered solid wood. Custom finish and size for UAE villas and hotels.",
+      "body": "Parametric nightstands bring the same sculptural language to the bedroom. Handmade from multi-layer engineered solid wood — floating or floor-mounted, single or paired.",
+      "spec": {
+        "material": "Material",
+        "materialV": "Multi-layer engineered solid wood, hand-assembled",
+        "finish": "Finish",
+        "finishV": "Custom colour, BETEK lacquer",
+        "mount": "Mount",
+        "mountV": "Floor or wall-mounted",
+        "size": "Size",
+        "sizeV": "Custom on request"
+      },
+      "apps": {
+        "a1": "Master bedrooms",
+        "a2": "Guest suites",
+        "a3": "Hotel rooms",
+        "a4": "Dressing rooms"
+      }
+    },
+    "wood-panels": {
+      "name": "Wood Panels",
+      "order": "05",
+      "tagline": "Parametric texture for every wall.",
+      "tags": "Architecture in Wood",
+      "metaTitle": "Parametric Wood Wall Panels — Bespoke | Parametrika",
+      "metaDescription": "CNC-milled parametric wood wall panels in custom patterns and finishes for UAE villas, hotels and signature interiors.",
+      "body": "Parametric panels shape the architecture of a space, transforming walls into an expressive element of the interior. Individual design makes it possible to create any pattern, scale and geometry — from soft organic lines to complex sculptural compositions. Each solution is developed for a specific project, accentuating the character of the space and creating a unique visual rhythm.",
+      "spec": {
+        "material": "Material",
+        "materialV": "multi-layer engineered solid wood, CNC-milled",
+        "finish": "Finish",
+        "finishV": "Premium VITEC lacquer, Turkey",
+        "install": "Installation",
+        "installV": "Modular tile system",
+        "size": "Size",
+        "sizeV": "Any scale or pattern"
+      },
+      "apps": {
+        "a1": "Living rooms",
+        "a2": "Lobbies",
+        "a3": "Bedrooms",
+        "a4": "Commercial spaces"
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Creation Technology",
+    "headline": "From Idea to a Work of Art",
+    "s1title": "Design & 3D Model",
+    "s1body": "Every piece is born from a unique idea. The designer develops the parametric model in AutoCAD, accounting for the architecture of the space, individual dimensions and orthopedic principles.",
+    "s2title": "High-Precision CNC Milling",
+    "s2body": "The finished model is fed to high-precision CNC equipment. Every lamel is cut from engineered solid wood with flawless accuracy — line for line, curve for curve.",
+    "s3title": "Handmade Assembly",
+    "s3body": "One master — one piece. Every element is shaped, sanded and assembled by a single craftsman from the first lamel to the final coat. Layer by layer, a sculptural volume takes form.",
+    "s4title": "Structural Reinforcement",
+    "s4body": "An internal system of concealed metal elements ensures exceptional strength and structural stability, preserving the aesthetic of the piece without any visible fixings.",
+    "s5title": "Premium Finishing",
+    "s5body": "Multi-step sanding and the application of premium VITEC lacquer (Turkey). The lacquer accentuates the natural grain of the wood without covering it — visible and tactile. Protection from moisture, UV and the UAE climate.",
+    "s6title": "Bespoke Packaging & Delivery",
+    "s6body": "Every piece is wrapped in a bespoke cover, handmade to the exact contours of that specific piece. Our masters deliver and install in white gloves — precise placement, zero risk to the finish.",
+    "s7title": "Personal Service Care",
+    "s7body": "Care for every piece continues after installation. Personal service maintenance ensures the furniture remains in perfect condition for many years."
+  },
+  "production": {
+    "eyebrow": "The Workshop",
+    "headline": "Made by Hand, Built to Last",
+    "sub": "CNC precision and human touch — every piece is assembled layer by layer in our atelier."
+  },
+  "why": {
+    "eyebrow": "Why Parametrika",
+    "headline": "Craftsmanship Without Compromise",
+    "w1title": "Exclusively Made to Order",
+    "w1body": "Every piece is created for a specific client and a specific space. No off-the-shelf stock, no mass market — only bespoke furniture that cannot be owned by everyone.",
+    "w2title": "One Master, One Piece",
+    "w2body": "Every item is made by a single craftsman — from the first lamel to the final coat. Not a production line. A collector-grade art object.",
+    "w3title": "Natural Wood & Green Certified",
+    "w3body": "Solid engineered wood. Premium VITEC lacquer that accentuates the grain without covering it — visible in every piece. Green Certificate — no toxic substances, safe for the family.",
+    "w4title": "Built for the UAE",
+    "w4body": "Designed for both indoor and outdoor use, with every detail adapted to UAE heat, UV and humidity. Made here, for here.",
+    "w5title": "White-Glove Delivery",
+    "w5body": "Bespoke covers handmade to the exact contours of each piece, climate-controlled transport, installation by our masters in white gloves — service at the level of the product itself."
+  },
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "headline": "Request a Personal Proposal",
+    "sub": "Tell us about your project. We will prepare an individual solution that takes into account the architecture of your space and your wishes.",
+    "address": "Office 101, Al Zarouni Business Centre, Al Barsha, Sheikh Zayed Road, Dubai, UAE.",
+    "name": "Your Name",
+    "phone": "Phone / WhatsApp",
+    "message": "Share your project idea",
+    "send": "Get a Proposal",
+    "or": "or reach us directly on",
+    "whatsapp": "WhatsApp"
+  },
+  "product": {
+    "view3d": "3D View",
+    "noModel": "3D Model Coming Soon",
+    "noModelSub": "We are preparing an interactive 3D model for this piece. Contact us to arrange a full preview.",
+    "rotate": "Drag to rotate · Scroll to zoom",
+    "gallery": "Photography",
+    "finishes": "Available Finishes",
+    "cta": "Request a Quote",
+    "ctaSub": "Interested in this piece? Tell us your space, preferred finish and size.",
+    "back": "Back to"
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "catalog": "Collections"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "nda": "More photos available on request."
+  },
+  "related": {
+    "title": "Explore More"
+  },
+  "footer": {
+    "copy": "© 2026 Parametrika · Bespoke Collections. Dubai, UAE.",
+    "part": "Part of New Era Exclusive"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "body": "The page you're looking for doesn't exist.",
+    "cta": "Back to Home"
+  }
+}
