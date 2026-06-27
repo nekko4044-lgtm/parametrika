@@ -2,6 +2,7 @@
   "nav": {
     "catalog": "Коллекции",
     "production": "Производство",
+    "journal": "Журнал",
     "why": "О нас",
     "contact": "Контакт",
     "close": "Закрыть"
@@ -331,6 +332,14 @@
   "footer": {
     "copy": "© 2026 Parametrika · Мебель на заказ. Дубай, ОАЭ.",
     "part": "Часть New Era Exclusive"
+  },
+  "journal": {
+    "eyebrow": "Журнал",
+    "headline": "Мастерство и Дизайн",
+    "readMore": "Читать",
+    "minRead": "мин чтения",
+    "backToJournal": "Журнал",
+    "navLink": "Журнал"
   },
   "notFound": {
     "title": "Страница не найдена",

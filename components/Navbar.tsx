@@ -37,6 +37,7 @@ export default function Navbar() {
   const links = [
     { href: `/${locale}/catalog`,    label: t('catalog'),    route: true,  hash: null      },
     { href: `/${locale}/production`, label: t('production'), route: true,  hash: null      },
+    { href: `/${locale}/journal`,    label: t('journal'),    route: true,  hash: null      },
     { href: `/${locale}#about`,      label: t('why'),        route: false, hash: '#about'  },
     { href: `/${locale}#contact`,    label: t('contact'),    route: false, hash: '#contact'},
   ]

@@ -36,6 +36,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `${base}/${locale}`,
       languages: {
+        'x-default': `${base}/en`,
         en: `${base}/en`,
         ru: `${base}/ru`,
         ar: `${base}/ar`,
@@ -84,12 +85,13 @@ export default async function LocaleLayout({
   const orgLd = {
     '@context': 'https://schema.org',
     '@type': 'FurnitureStore',
-    '@id': 'https://parametrika.ae',
+    '@id': 'https://parametrika.ae/en#business',
     name: 'Parametrika',
     url: 'https://parametrika.ae',
     description:
       'Bespoke parametric furniture and architectural materials. The materials house of New Era Exclusive, Dubai.',
     areaServed: ['AE', 'SA', 'KW', 'QA', 'BH', 'OM'],
+    foundingDate: '2024',
     sameAs: [
       'https://www.instagram.com/newera_uae',
       'https://www.instagram.com/newera_uae?igsh=cjlwdnF3bTk5MDQ2',
@@ -106,6 +108,11 @@ export default async function LocaleLayout({
       postalCode: null,
       addressCountry: 'AE',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 25.104,
+      longitude: 55.173,
+    },
     telephone: '+971502541717',
     email: 'contact@parametrika.ae',
     priceRange: '$$$',
@@ -120,6 +127,12 @@ export default async function LocaleLayout({
       areaServed: 'AE',
       availableLanguage: ['en', 'ru', 'ar'],
     },
+    openingHoursSpecification: [{
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    }],
     knowsAbout: [
       'Parametric Furniture',
       'Bespoke Interior Design',

@@ -7,6 +7,10 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 import Footer from '@/components/Footer'
 import { CATEGORIES } from '@/lib/categories'
 
+function safeJsonLd(obj: unknown): string {
+  return JSON.stringify(obj).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026')
+}
+
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -75,12 +79,26 @@ export default async function CatalogPage({
     })),
   }
 
+  const collectionPageLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Parametrika Collections',
+    description: 'Bespoke parametric furniture collections — tables, chairs, consoles and architectural panels',
+    url: `${base}/${locale}/catalog`,
+    itemListElement: CATEGORIES.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: tc(`${c.slug}.name`),
+      url: `${base}/${locale}/catalog/${c.slug}`,
+    })),
+  }
+
   return (
     <main>
       <Navbar />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(collectionPageLd) }}
       />
       {/* spacing for fixed navbar */}
       <div className="pt-32 md:pt-40" />

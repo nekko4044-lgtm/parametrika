@@ -36,7 +36,7 @@ export async function generateMetadata({
   const base = 'https://parametrika.ae'
 
   const metaTitle = `${product.name} — ${tc(`${category}.name`)} | Parametrika`
-  const metaDescription = `${product.tagline}. ${tc(`${category}.tagline`)}. Bespoke crafted, handmade from engineered solid wood with premium finish.`
+  const metaDescription = `${product.name} — ${product.tagline}. Made to order in Dubai. CNC-milled from engineered solid wood with premium lacquer finish. White-glove delivery across UAE and GCC.`
 
   return {
     title: metaTitle,
@@ -129,6 +129,14 @@ export default async function ProductPage({
         telephone: '+971502541717',
       },
     },
+    additionalProperty: [
+      { '@type': 'PropertyValue', name: 'Manufacturing Process', value: 'CNC Milling + Handmade Assembly' },
+      { '@type': 'PropertyValue', name: 'Material', value: 'Multi-layer engineered solid wood' },
+      { '@type': 'PropertyValue', name: 'Finish', value: 'Premium lacquer — 4-stage application' },
+      { '@type': 'PropertyValue', name: 'Availability', value: 'Made to Order' },
+      { '@type': 'PropertyValue', name: 'Delivery', value: 'White-glove installation included' },
+      { '@type': 'PropertyValue', name: 'Service Area', value: 'UAE and GCC countries' },
+    ],
   }
 
   const breadcrumbLd = {

@@ -2,6 +2,7 @@
   "nav": {
     "catalog": "Collections",
     "production": "Production",
+    "journal": "Journal",
     "why": "About Us",
     "contact": "Contact",
     "close": "Close"
@@ -331,6 +332,14 @@
   "footer": {
     "copy": "© 2026 Parametrika · Bespoke Collections. Dubai, UAE.",
     "part": "Part of New Era Exclusive"
+  },
+  "journal": {
+    "eyebrow": "Journal",
+    "headline": "Craftsmanship & Design",
+    "readMore": "Read",
+    "minRead": "min read",
+    "backToJournal": "Journal",
+    "navLink": "Journal"
   },
   "notFound": {
     "title": "Page Not Found",
