@@ -94,20 +94,27 @@ export default function Hero() {
       {/* Mute toggle */}
       <button
         onClick={toggleMute}
-        className="absolute bottom-8 left-6 md:left-16 z-[3] w-9 h-9 rounded-full border border-white/20 bg-ink/60 backdrop-blur-sm text-cream/60 hover:text-cream transition-all duration-300 flex items-center justify-center"
+        className="absolute bottom-8 left-6 md:left-16 z-[3] inline-flex items-center gap-2 px-4 min-h-[44px] rounded-full border border-gold/35 hover:border-gold/60 bg-ink/80 font-body text-[10px] uppercase tracking-[0.2em] text-gold/60 hover:text-gold/80 active:scale-[0.97]"
+        style={{ transition: 'color 200ms cubic-bezier(0.23,1,0.32,1), border-color 200ms cubic-bezier(0.23,1,0.32,1), transform 100ms ease-out' }}
         aria-label={isMuted ? 'Unmute' : 'Mute'}
       >
         {isMuted ? (
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-            <line x1="23" y1="9" x2="17" y2="15"/>
-            <line x1="17" y1="9" x2="23" y2="15"/>
-          </svg>
+          <>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <line x1="23" y1="9" x2="17" y2="15"/>
+              <line x1="17" y1="9" x2="23" y2="15"/>
+            </svg>
+            Sound Off
+          </>
         ) : (
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
-          </svg>
+          <>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            </svg>
+            Sound On
+          </>
         )}
       </button>
 
@@ -145,7 +152,8 @@ export default function Hero() {
           </p>
           <a
             href="#contact"
-            className="group flex-shrink-0 inline-flex items-center gap-3 border border-gold/35 hover:border-gold hover:bg-gold/8 text-gold font-body text-[13px] tracking-wide px-7 py-3.5 rounded-full transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97]"
+            className="group flex-shrink-0 inline-flex items-center gap-3 border border-gold/35 hover:border-gold hover:bg-gold/8 text-gold font-body text-[13px] tracking-wide px-7 py-3.5 rounded-full active:scale-[0.97]"
+            style={{ transition: 'color 300ms cubic-bezier(0.23,1,0.32,1), border-color 300ms cubic-bezier(0.23,1,0.32,1), background-color 300ms cubic-bezier(0.23,1,0.32,1), transform 100ms ease-out' }}
           >
             {t('cta')}
             <span className="w-7 h-7 rounded-full border border-gold/25 flex items-center justify-center transition-all duration-500 group-hover:bg-gold/15 group-hover:border-gold/60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
