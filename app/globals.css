@@ -127,5 +127,6 @@ body::before {
 .gold-line {
   height: 1px;
   background: linear-gradient(90deg, transparent, #C9A84C, transparent);
-  transition: width 1.2s cubic-bezier(0.32,0.72,0,1);
+  transform-origin: left center;
+  transition: transform 1.2s cubic-bezier(0.32,0.72,0,1);
 }

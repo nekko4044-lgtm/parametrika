@@ -54,7 +54,7 @@ function MarqueeTrack({ items, reverse = false }: { items: string[]; reverse?: b
               'select-none',
               item === '·'
                 ? 'text-gold/30 text-[18px] mx-4 leading-none'
-                : 'font-body text-[10px] uppercase tracking-[0.3em] text-gold/55'
+                : 'font-body text-[10px] uppercase tracking-[0.3em] text-gold/70'
             )}
           >
             {item}

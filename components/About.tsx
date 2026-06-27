@@ -134,7 +134,7 @@ export default function About() {
 
         </div>
 
-        {/* Stats — glassmorphism */}
+        {/* Stats — solid cards */}
         <div ref={rSt} className="reveal grid grid-cols-3 gap-3 md:gap-5">
           {([
             { value: 4,   suffix: '',  label: t('stat1'), sub: t('stat1desc') },
@@ -143,17 +143,9 @@ export default function About() {
           ] as const).map((stat, i) => (
             <div
               key={i}
-              className="relative flex flex-col gap-3 rounded-2xl p-5 md:p-8 overflow-hidden"
-              style={{
-                background: 'rgba(255,255,255,0.03)',
-                backdropFilter: 'blur(20px)',
-                WebkitBackdropFilter: 'blur(20px)',
-                border: '1px solid rgba(201,168,76,0.12)',
-                boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 32px rgba(0,0,0,0.4)',
-              }}
+              className="relative flex flex-col gap-3 rounded-2xl p-5 md:p-8 overflow-hidden bg-stone border border-white/10"
             >
-              <div className="absolute top-0 left-0 w-12 h-px bg-gradient-to-r from-gold/50 to-transparent" />
-              <div className="absolute top-0 left-0 w-px h-12 bg-gradient-to-b from-gold/50 to-transparent" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-gold/50 via-gold/20 to-transparent" />
               <div className="flex items-start gap-0.5 leading-none">
                 <span className="font-stat text-[clamp(2.4rem,5vw,4rem)] font-normal text-cream/90 leading-none tabular-nums">
                   <Counter target={stat.value} />

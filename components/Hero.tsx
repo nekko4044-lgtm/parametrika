@@ -95,7 +95,7 @@ export default function Hero() {
       <button
         onClick={toggleMute}
         className="absolute bottom-8 left-6 md:left-16 z-[3] w-9 h-9 rounded-full border border-white/20 bg-ink/60 backdrop-blur-sm text-cream/60 hover:text-cream transition-all duration-300 flex items-center justify-center"
-        aria-label={isMuted ? 'Включить звук' : 'Выключить звук'}
+        aria-label={isMuted ? 'Unmute' : 'Mute'}
       >
         {isMuted ? (
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
