@@ -6,7 +6,13 @@ import Navbar from '@/components/Navbar'
 import Contact from '@/components/Contact'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import Footer from '@/components/Footer'
-import { getArticle, getAllArticleSlugs, getPublishedArticles, type ArticleSection } from '@/lib/articles'
+import {
+  getArticle,
+  getAllArticleSlugsIncludingFuture,
+  getPublishedArticles,
+  isArticlePublished,
+  type ArticleSection,
+} from '@/lib/articles'
 
 const locales = ['en', 'ru', 'ar']
 
@@ -15,7 +21,7 @@ function safeJsonLd(obj: unknown): string {
 }
 
 export function generateStaticParams() {
-  const slugs = getAllArticleSlugs()
+  const slugs = getAllArticleSlugsIncludingFuture()
   const params: { locale: string; slug: string }[] = []
   for (const locale of locales) {
     for (const slug of slugs) {
@@ -36,6 +42,7 @@ export async function generateMetadata({
 
   const content = article[locale as 'en' | 'ru' | 'ar']
   const base = 'https://parametrika.ae'
+  const published = isArticlePublished(article)
 
   const articleLd = {
     '@context': 'https://schema.org',
@@ -51,7 +58,7 @@ export async function generateMetadata({
   return {
     title: `${content.title} | Parametrika`,
     description: content.excerpt,
-    robots: { index: true, follow: true },
+    robots: published ? { index: true, follow: true } : { index: false, follow: false },
     alternates: {
       canonical: `${base}/${locale}/journal/${slug}`,
       languages: Object.fromEntries(locales.map(l => [l, `${base}/${l}/journal/${slug}`])),
@@ -142,6 +149,7 @@ export default async function ArticlePage({
   const content = article[locale as 'en' | 'ru' | 'ar']
   const isRtl = locale === 'ar'
   const base = 'https://parametrika.ae'
+  const published = isArticlePublished(article)
 
   const articleLd = {
     '@context': 'https://schema.org',
@@ -196,6 +204,13 @@ export default async function ArticlePage({
 
       {/* Article header */}
       <article className="pt-36 pb-24 px-6 md:px-16 max-w-5xl mx-auto w-full">
+
+        {!published && (
+          <div className="inline-flex items-center gap-2 font-body text-[10px] uppercase tracking-[0.2em] text-gold/80 bg-gold/[0.08] border border-gold/25 px-3 py-1.5 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-gold/70" />
+            Scheduled — not yet live
+          </div>
+        )}
 
         {/* Back link */}
         <Link
