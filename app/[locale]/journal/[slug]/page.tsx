@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar'
 import Contact from '@/components/Contact'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import Footer from '@/components/Footer'
-import { getArticle, getAllArticleSlugs, ARTICLES, type ArticleSection } from '@/lib/articles'
+import { getArticle, getAllArticleSlugs, getPublishedArticles, type ArticleSection } from '@/lib/articles'
 
 const locales = ['en', 'ru', 'ar']
 
@@ -155,7 +155,32 @@ export default async function ArticlePage({
   }
 
   // Other articles for "More from Parametrika"
-  const otherArticles = ARTICLES.filter(a => a.slug !== slug)
+  const otherArticles = getPublishedArticles().filter(a => a.slug !== slug)
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `${base}/${locale}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: t('eyebrow'),
+        item: `${base}/${locale}/journal`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: content.title,
+        item: `${base}/${locale}/journal/${slug}`,
+      },
+    ],
+  }
 
   return (
     <main dir={isRtl ? 'rtl' : 'ltr'}>
@@ -163,6 +188,10 @@ export default async function ArticlePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbLd) }}
       />
 
       {/* Article header */}

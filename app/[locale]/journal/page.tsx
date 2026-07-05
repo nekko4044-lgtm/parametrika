@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Contact from '@/components/Contact'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import Footer from '@/components/Footer'
-import { ARTICLES } from '@/lib/articles'
+import { getPublishedArticles } from '@/lib/articles'
 import JournalList from '@/components/JournalList'
 
 const locales = ['en', 'ru', 'ar']
@@ -69,13 +69,15 @@ export default async function JournalPage({
 
   const isRtl = locale === 'ar'
 
+  const publishedArticles = getPublishedArticles()
+
   const blogLd = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: `Parametrika ${t('eyebrow')}`,
     description: t('headline'),
     url: `https://parametrika.ae/${locale}/journal`,
-    blogPost: ARTICLES.map(a => ({
+    blogPost: publishedArticles.map(a => ({
       '@type': 'BlogPosting',
       headline: a[locale as 'en' | 'ru' | 'ar'].title,
       description: a[locale as 'en' | 'ru' | 'ar'].excerpt,
@@ -84,9 +86,26 @@ export default async function JournalPage({
     })),
   }
 
-  const sorted = [...ARTICLES].sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  )
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `https://parametrika.ae/${locale}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: t('eyebrow'),
+        item: `https://parametrika.ae/${locale}/journal`,
+      },
+    ],
+  }
+
+  const sorted = publishedArticles
 
   return (
     <main dir={isRtl ? 'rtl' : 'ltr'}>
@@ -94,6 +113,10 @@ export default async function JournalPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(blogLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbLd) }}
       />
 
       {/* Hero header */}

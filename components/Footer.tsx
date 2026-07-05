@@ -13,6 +13,12 @@ export default function Footer() {
           <Image src="/logo.png" alt="Parametrika" width={32} height={32} className="rounded-full opacity-60" />
         </Link>
         <p className="font-body text-xs text-cream/30 text-center">{t('copy')}</p>
+        <Link
+          href={`/${locale}/journal`}
+          className="font-body text-[10px] uppercase tracking-[0.25em] text-cream/25 hover:text-cream/50 transition-colors duration-200"
+        >
+          {t('journal')}
+        </Link>
         <a
           href="https://newera.ae"
           target="_blank"
