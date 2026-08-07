@@ -32,24 +32,6 @@ export type Product = {
   roomPhotos?: string[]
 }
 
-// All 9 wood finishes — same palette across every product.
-// `cover` is shown until real variant photos are generated and paths updated.
-function woodFinishes(cover: string): ColorVariant[] {
-  return [
-    { id: 'deep-espresso',    name: 'Deep Espresso',    hex: '#1C1008', src: cover },
-    { id: 'dark-walnut',      name: 'Dark Walnut',      hex: '#3B1F0E', src: cover },
-    { id: 'warm-cappuccino',  name: 'Warm Cappuccino',  hex: '#7A5540', src: cover },
-    { id: 'classic-brown',    name: 'Classic Brown',    hex: '#5C3520', src: cover },
-    { id: 'golden-caramel',   name: 'Golden Caramel',   hex: '#A07830', src: cover },
-    { id: 'light-oak',        name: 'Light Oak',        hex: '#C09A60', src: cover },
-    { id: 'natural-wood',     name: 'Natural Wood',     hex: '#CCAA7A', src: cover },
-    { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: cover },
-    { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: cover },
-  ]
-}
-
-const ROOM_PLACEHOLDERS = ['__placeholder__', '__placeholder__', '__placeholder__', '__placeholder__']
-
 export type Category = {
   slug: string
   order: string
@@ -65,7 +47,7 @@ export const CATEGORIES: Category[] = [
   {
     slug: 'tables',
     order: '01',
-    image: '/catalog/tables/table1.png',
+    image: '/catalog/tables/table1.jpg',
     hasPhotos: true,
     hasProcess: true,
     specs: [],
@@ -125,7 +107,7 @@ export const CATEGORIES: Category[] = [
   {
     slug: 'chairs',
     order: '02',
-    image: '/catalog/chairs/sahara.png',
+    image: '/catalog/chairs/sahara-hero.jpg',
     hasPhotos: true,
     hasProcess: false,
     specs: [],
@@ -195,7 +177,13 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/tables/dining/zaha-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/tables/dining/zaha-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/tables/dining/room/zaha-1.jpg',
+      '/catalog/tables/dining/room/zaha-2.jpg',
+      '/catalog/tables/dining/room/zaha-3.jpg',
+      '/catalog/tables/dining/room/zaha-4.jpg',
+      '/catalog/tables/dining/room/zaha-5.jpg',
+    ],
   },
   {
     slug: 'zahir',
@@ -216,7 +204,13 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/tables/dining/zahir-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/tables/dining/zahir-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/tables/dining/room/zahir-1.jpg',
+      '/catalog/tables/dining/room/zahir-2.jpg',
+      '/catalog/tables/dining/room/zahir-3.jpg',
+      '/catalog/tables/dining/room/zahir-4.jpg',
+      '/catalog/tables/dining/room/zahir-5.jpg',
+    ],
   },
   {
     slug: 'vilar',
@@ -237,7 +231,13 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/tables/dining/vilar-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/tables/dining/vilar-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/tables/dining/room/vilar-1.jpg',
+      '/catalog/tables/dining/room/vilar-2.jpg',
+      '/catalog/tables/dining/room/vilar-3.jpg',
+      '/catalog/tables/dining/room/vilar-4.jpg',
+      '/catalog/tables/dining/room/vilar-5.jpg',
+    ],
   },
 
   // ── Tables — Coffee Tables ────────────────────────────────────────────────
@@ -260,7 +260,14 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/tables/coffee/rafan-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/tables/coffee/rafan-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/tables/coffee/room/rafan-1.jpg',
+      '/catalog/tables/coffee/room/rafan-2.jpg',
+      '/catalog/tables/coffee/room/rafan-3.jpg',
+      '/catalog/tables/coffee/room/rafan-4.jpg',
+      '/catalog/tables/coffee/room/rafan-5.jpg',
+      '/catalog/tables/coffee/room/rafan-6.jpg',
+    ],
   },
   {
     slug: 'dune',
@@ -281,7 +288,13 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/tables/coffee/dune-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/tables/coffee/dune-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/tables/coffee/room/dune-1.jpg',
+      '/catalog/tables/coffee/room/dune-2.jpg',
+      '/catalog/tables/coffee/room/dune-3.jpg',
+      '/catalog/tables/coffee/room/dune-4.jpg',
+      '/catalog/tables/coffee/room/dune-5.jpg',
+    ],
   },
   {
     slug: 'rayan',
@@ -302,7 +315,14 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/tables/coffee/rayan-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/tables/coffee/rayan-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/tables/coffee/room/rayan-1.jpg',
+      '/catalog/tables/coffee/room/rayan-2.jpg',
+      '/catalog/tables/coffee/room/rayan-3.jpg',
+      '/catalog/tables/coffee/room/rayan-4.jpg',
+      '/catalog/tables/coffee/room/rayan-5.jpg',
+      '/catalog/tables/coffee/room/rayan-6.jpg',
+    ],
   },
 
   // ── Tables — Office ───────────────────────────────────────────────────────
@@ -325,7 +345,14 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/tables/office/zaha-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/tables/office/zaha-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/tables/office/room/zaha-1.jpg',
+      '/catalog/tables/office/room/zaha-2.jpg',
+      '/catalog/tables/office/room/zaha-3.jpg',
+      '/catalog/tables/office/room/zaha-4.jpg',
+      '/catalog/tables/office/room/zaha-5.jpg',
+      '/catalog/tables/office/room/zaha-6.jpg',
+    ],
   },
   {
     slug: 'vilar-office',
@@ -346,7 +373,14 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/tables/office/vilar-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/tables/office/vilar-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/tables/office/room/vilar-1.jpg',
+      '/catalog/tables/office/room/vilar-2.jpg',
+      '/catalog/tables/office/room/vilar-3.jpg',
+      '/catalog/tables/office/room/vilar-4.jpg',
+      '/catalog/tables/office/room/vilar-5.jpg',
+      '/catalog/tables/office/room/vilar-6.jpg',
+    ],
   },
 
   // ── Tables — Bar Collection ───────────────────────────────────────────────
@@ -369,7 +403,14 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/tables/bar/rafan-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/tables/bar/rafan-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/tables/bar/room/rafan-1.jpg',
+      '/catalog/tables/bar/room/rafan-2.jpg',
+      '/catalog/tables/bar/room/rafan-3.jpg',
+      '/catalog/tables/bar/room/rafan-4.jpg',
+      '/catalog/tables/bar/room/rafan-5.jpg',
+      '/catalog/tables/bar/room/rafan-6.jpg',
+    ],
   },
 
   // ── Chairs — SAHARA ──────────────────────────────────────────────────────
@@ -392,7 +433,14 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/chairs/sahara-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/chairs/sahara-whitewash.png'       },
     ],
-    roomPhotos: ['__placeholder__', '__placeholder__', '__placeholder__', '__placeholder__', '__placeholder__'],
+    roomPhotos: [
+      '/catalog/chairs/room/sahara-1.jpg',
+      '/catalog/chairs/room/sahara-2.jpg',
+      '/catalog/chairs/room/sahara-3.jpg',
+      '/catalog/chairs/room/sahara-4.jpg',
+      '/catalog/chairs/room/sahara-5.jpg',
+      '/catalog/chairs/room/sahara-6.jpg',
+    ],
   },
 
   // ── Consoles ─────────────────────────────────────────────────────────────
@@ -414,7 +462,14 @@ export const PRODUCTS: Product[] = [
       { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/consoles/console-natural-bleached.png'},
       { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/consoles/console-whitewash.png'       },
     ],
-    roomPhotos: ROOM_PLACEHOLDERS,
+    roomPhotos: [
+      '/catalog/nightstands/room/console-1.jpg',
+      '/catalog/nightstands/room/console-2.jpg',
+      '/catalog/nightstands/room/console-3.jpg',
+      '/catalog/nightstands/room/console-4.jpg',
+      '/catalog/nightstands/room/console-5.jpg',
+      '/catalog/nightstands/room/console-6.jpg',
+    ],
   },
 
   // ── Wood Panels ──────────────────────────────────────────────────────────
@@ -430,8 +485,25 @@ export const PRODUCTS: Product[] = [
       { src: '/catalog/wood-panels/wp-03.jpg' },
       { src: '/catalog/wood-panels/wp-04.jpg' },
     ],
-    colorVariants: woodFinishes('/catalog/wood-panels/wp-01.jpg'),
-    roomPhotos: ROOM_PLACEHOLDERS,
+    colorVariants: [
+      { id: 'deep-espresso',    name: 'Deep Espresso',    hex: '#1C1008', src: '/catalog/wood-panels/wp-deep-espresso.jpg'    },
+      { id: 'dark-walnut',      name: 'Dark Walnut',      hex: '#3B1F0E', src: '/catalog/wood-panels/wp-dark-walnut.jpg'      },
+      { id: 'warm-cappuccino',  name: 'Warm Cappuccino',  hex: '#7A5540', src: '/catalog/wood-panels/wp-warm-cappuccino.jpg'  },
+      { id: 'classic-brown',    name: 'Classic Brown',    hex: '#5C3520', src: '/catalog/wood-panels/wp-classic-brown.jpg'    },
+      { id: 'golden-caramel',   name: 'Golden Caramel',   hex: '#A07830', src: '/catalog/wood-panels/wp-02.jpg'               },
+      { id: 'light-oak',        name: 'Light Oak',        hex: '#C09A60', src: '/catalog/wood-panels/wp-light-oak.jpg'        },
+      { id: 'natural-wood',     name: 'Natural Wood',     hex: '#CCAA7A', src: '/catalog/wood-panels/wp-natural-wood.jpg'     },
+      { id: 'natural-bleached', name: 'Natural Bleached', hex: '#DDC9A8', src: '/catalog/wood-panels/wp-natural-bleached.jpg' },
+      { id: 'whitewash',        name: 'Whitewash',        hex: '#EEE2CE', src: '/catalog/wood-panels/wp-whitewash.jpg'        },
+    ],
+    roomPhotos: [
+      '/catalog/wood-panels/room/panel-1.jpg',
+      '/catalog/wood-panels/room/panel-2.jpg',
+      '/catalog/wood-panels/room/panel-3.jpg',
+      '/catalog/wood-panels/room/panel-4.jpg',
+      '/catalog/wood-panels/room/panel-5.jpg',
+      '/catalog/wood-panels/room/panel-6.jpg',
+    ],
   },
 ]
 

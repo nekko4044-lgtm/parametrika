@@ -20,7 +20,7 @@ export default function Footer() {
           {t('journal')}
         </Link>
         <a
-          href="https://newera.ae"
+          href="https://neweraexclusive.ae"
           target="_blank"
           rel="noopener"
           className="font-body text-[10px] uppercase tracking-[0.25em] text-cream/25 hover:text-cream/50 transition-colors duration-200"

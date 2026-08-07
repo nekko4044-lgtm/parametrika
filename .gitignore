@@ -22,3 +22,9 @@ yarn-debug.log*
 # OS files
 .DS_Store
 Thumbs.db
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
+
+# Scratch/draft image output (finals live under public/catalog/)
+generated/
