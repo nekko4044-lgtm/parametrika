@@ -28,3 +28,8 @@ tsconfig.tsbuildinfo
 
 # Scratch/draft image output (finals live under public/catalog/)
 generated/
+
+# Original media retained locally after web optimization; never publish or commit.
+source-assets/
+source-unused-assets/
+source-videos/

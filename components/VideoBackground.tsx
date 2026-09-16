@@ -1,20 +1,20 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 
 const VIDEOS = [
   {
-    desktop: { mp4: '/videos/lines-1-desktop.mp4', webm: '/videos/lines-1-desktop.webm' },
-    mobile:  { mp4: '/videos/lines-1-mobile.mp4',  webm: '/videos/lines-1-mobile.webm'  },
+    desktop: '/videos/lines-1-desktop.mp4',
+    mobile:  '/videos/lines-1-mobile.mp4',
   },
   {
-    desktop: { mp4: '/videos/lines-2-desktop.mp4', webm: '/videos/lines-2-desktop.webm' },
-    mobile:  { mp4: '/videos/lines-2-mobile.mp4',  webm: '/videos/lines-2-mobile.webm'  },
+    desktop: '/videos/lines-2-desktop.mp4',
+    mobile:  '/videos/lines-2-mobile.mp4',
   },
   {
-    desktop: { mp4: '/videos/lines-3-desktop.mp4', webm: '/videos/lines-3-desktop.webm' },
-    mobile:  { mp4: '/videos/lines-3-mobile.mp4',  webm: '/videos/lines-3-mobile.webm'  },
+    desktop: '/videos/lines-3-desktop.mp4',
+    mobile:  '/videos/lines-3-mobile.mp4',
   },
 ]
 
@@ -26,15 +26,45 @@ function pickIndex(pathname: string): number {
 export default function VideoBackground() {
   const pathname = usePathname()
   const idx = pickIndex(pathname)
-  const deskRef = useRef<HTMLVideoElement>(null)
-  const mobRef = useRef<HTMLVideoElement>(null)
+  const [videoSource, setVideoSource] = useState<string | null>(null)
+  const [shouldLoad, setShouldLoad] = useState(false)
 
   useEffect(() => {
-    deskRef.current?.play().catch(() => {})
-    mobRef.current?.play().catch(() => {})
+    const desktop = window.matchMedia('(min-width: 768px)')
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+    const updateSource = () => {
+      setShouldLoad(false)
+      if (reducedMotion.matches) {
+        setVideoSource(null)
+        return
+      }
+
+      const variant = VIDEOS[idx]
+      setVideoSource(desktop.matches ? variant.desktop : variant.mobile)
+    }
+
+    updateSource()
+    desktop.addEventListener('change', updateSource)
+    reducedMotion.addEventListener('change', updateSource)
+
+    return () => {
+      desktop.removeEventListener('change', updateSource)
+      reducedMotion.removeEventListener('change', updateSource)
+    }
   }, [idx])
 
-  const v = VIDEOS[idx]
+  useEffect(() => {
+    if (!videoSource) return
+
+    const timeout = window.setTimeout(() => setShouldLoad(true), 1200)
+
+    return () => {
+      window.clearTimeout(timeout)
+    }
+  }, [videoSource])
+
+  if (!videoSource || !shouldLoad) return null
 
   return (
     <div
@@ -43,23 +73,12 @@ export default function VideoBackground() {
       style={{ zIndex: 5, mixBlendMode: 'screen' }}
     >
       <video
-        ref={deskRef}
-        key={`d-${idx}`}
+        key={videoSource}
         autoPlay loop muted playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-0 md:opacity-[0.13]"
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.13]"
       >
-        <source src={v.desktop.mp4}  type="video/mp4" />
-        <source src={v.desktop.webm} type="video/webm" />
-      </video>
-
-      <video
-        ref={mobRef}
-        key={`m-${idx}`}
-        autoPlay loop muted playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.13] md:opacity-0"
-      >
-        <source src={v.mobile.mp4}  type="video/mp4" />
-        <source src={v.mobile.webm} type="video/webm" />
+        <source src={videoSource} type="video/mp4" />
       </video>
     </div>
   )

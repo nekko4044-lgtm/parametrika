@@ -2,10 +2,8 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import Script from 'next/script'
 import SmoothScroll from '@/components/SmoothScroll'
 import Cursor from '@/components/Cursor'
-import PageLoader from '@/components/PageLoader'
 import VideoBackground from '@/components/VideoBackground'
 import ScrollToTop from '@/components/ScrollToTop'
 import LocaleHtmlSync from '@/components/LocaleHtmlSync'
@@ -162,14 +160,8 @@ export default async function LocaleLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(orgLd) }}
       />
-      <Script
-        type="module"
-        src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
-        strategy="lazyOnload"
-      />
       <ScrollToTop />
       <VideoBackground />
-      <PageLoader />
       <SmoothScroll />
       <Cursor />
       <NextIntlClientProvider messages={messages}>

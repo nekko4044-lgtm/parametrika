@@ -7,9 +7,9 @@ import { WordReveal } from './Reveal'
 export default function Hero() {
   const t = useTranslations('hero')
   const lineRef = useRef<HTMLDivElement>(null)
-  const videoDesktopRef = useRef<HTMLVideoElement>(null)
-  const videoMobileRef = useRef<HTMLVideoElement>(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const [isMuted, setIsMuted] = useState(true)
+  const [videoSource, setVideoSource] = useState<string | null>(null)
 
   useEffect(() => {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`)
@@ -22,43 +22,52 @@ export default function Hero() {
     return () => clearTimeout(timer)
   }, [])
 
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 768px)')
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+    const updateSource = () => {
+      if (reducedMotion.matches) {
+        setVideoSource(null)
+        return
+      }
+
+      setVideoSource(desktop.matches ? '/videos/hero-desktop.mp4' : '/videos/hero-mobile.mp4')
+    }
+
+    updateSource()
+    desktop.addEventListener('change', updateSource)
+    reducedMotion.addEventListener('change', updateSource)
+
+    return () => {
+      desktop.removeEventListener('change', updateSource)
+      reducedMotion.removeEventListener('change', updateSource)
+    }
+  }, [])
+
   function toggleMute() {
     const next = !isMuted
-    if (videoDesktopRef.current) videoDesktopRef.current.muted = next
-    if (videoMobileRef.current) videoMobileRef.current.muted = next
+    if (videoRef.current) videoRef.current.muted = next
     setIsMuted(next)
   }
 
   return (
     <section className="relative z-[10] flex flex-col justify-end px-6 md:px-16 pb-16 md:pb-24 overflow-hidden" style={{ minHeight: 'calc(var(--vh, 1svh) * 100)' }}>
 
-      {/* Hero video — desktop */}
       <div className="absolute inset-0 z-0">
-        {/* Desktop */}
-        <video
-          ref={videoDesktopRef}
-          autoPlay
-          loop
-          playsInline
-          muted
-          className="hidden md:block absolute inset-0 w-full h-full object-cover object-center"
-        >
-          <source src="/videos/hero-desktop.webm" type="video/webm" />
-          <source src="/videos/hero-desktop.mp4" type="video/mp4" />
-        </video>
-
-        {/* Mobile */}
-        <video
-          ref={videoMobileRef}
-          autoPlay
-          loop
-          playsInline
-          muted
-          className="block md:hidden absolute inset-0 w-full h-full object-cover object-center"
-        >
-          <source src="/videos/hero-mobile.webm" type="video/webm" />
-          <source src="/videos/hero-mobile.mp4" type="video/mp4" />
-        </video>
+        {videoSource && (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            playsInline
+            muted={isMuted}
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          >
+            <source src={videoSource} type="video/mp4" />
+          </video>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/60 to-ink/88" />
       </div>
 
@@ -96,7 +105,7 @@ export default function Hero() {
         onClick={toggleMute}
         className="absolute bottom-8 left-6 md:left-16 z-[3] inline-flex items-center gap-2 px-4 min-h-[44px] rounded-full border border-gold/35 hover:border-gold/60 bg-ink/80 font-body text-[10px] uppercase tracking-[0.2em] text-gold/60 hover:text-gold/80 active:scale-[0.97]"
         style={{ transition: 'color 200ms cubic-bezier(0.23,1,0.32,1), border-color 200ms cubic-bezier(0.23,1,0.32,1), transform 100ms ease-out' }}
-        aria-label={isMuted ? 'Unmute' : 'Mute'}
+        aria-label={isMuted ? 'Sound Off' : 'Sound On'}
       >
         {isMuted ? (
           <>

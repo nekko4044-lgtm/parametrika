@@ -115,7 +115,7 @@ export default function About() {
               style={{ minHeight: '320px' }}
             >
               <Image
-                src="/photo121.jpg"
+                src="/photo121.webp"
                 alt="Parametrika craftsmanship"
                 fill
                 className="object-cover object-center"
