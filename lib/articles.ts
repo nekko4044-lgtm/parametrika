@@ -22,7 +22,7 @@ export type Article = {
 export const ARTICLES: Article[] = [
   {
     slug: 'custom-furniture-restaurants-hotels-dubai',
-    publishedAt: '2026-08-10',
+    publishedAt: '2026-09-16',
     readingTime: 6,
     category: 'Design',
     en: {
@@ -103,7 +103,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'how-to-commission-custom-furniture-dubai',
-    publishedAt: '2026-08-17',
+    publishedAt: '2026-09-21',
     readingTime: 7,
     category: 'Guide',
     en: {
@@ -247,7 +247,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'furniture-manufacturer-for-interior-designers',
-    publishedAt: '2026-08-24',
+    publishedAt: '2026-09-28',
     readingTime: 6,
     category: 'Process',
     en: {
@@ -328,7 +328,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'glass-top-dining-table-pros-cons',
-    publishedAt: '2026-08-31',
+    publishedAt: '2026-10-05',
     readingTime: 5,
     category: 'Guide',
     en: {
@@ -418,7 +418,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'home-bar-design-villa-dubai',
-    publishedAt: '2026-09-07',
+    publishedAt: '2026-10-12',
     readingTime: 5,
     category: 'Design',
     en: {
@@ -484,7 +484,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'plywood-vs-solid-wood-furniture',
-    publishedAt: '2026-09-14',
+    publishedAt: '2026-10-19',
     readingTime: 6,
     category: 'Materials',
     en: {
@@ -556,7 +556,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'home-office-furniture-dubai-villa',
-    publishedAt: '2026-09-21',
+    publishedAt: '2026-10-26',
     readingTime: 6,
     category: 'Design',
     en: {
@@ -652,7 +652,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'coffee-table-guide-living-room',
-    publishedAt: '2026-09-28',
+    publishedAt: '2026-11-02',
     readingTime: 6,
     category: 'Guide',
     en: {
@@ -727,7 +727,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'dark-vs-light-wood-furniture-interior',
-    publishedAt: '2026-10-05',
+    publishedAt: '2026-11-09',
     readingTime: 5,
     category: 'Materials',
     en: {
@@ -802,7 +802,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'statement-furniture-piece-interior',
-    publishedAt: '2026-10-12',
+    publishedAt: '2026-11-16',
     readingTime: 5,
     category: 'Design',
     en: {
@@ -892,7 +892,7 @@ export const ARTICLES: Article[] = [
   },
   {
     slug: 'wood-furniture-care-uae-climate',
-    publishedAt: '2026-10-19',
+    publishedAt: '2026-11-23',
     readingTime: 5,
     category: 'Guide',
     en: {

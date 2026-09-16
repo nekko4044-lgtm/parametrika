@@ -223,17 +223,19 @@ export default function InlineProductViewer({
               {product.tagline}
             </p>
           </div>
-          <Link
-            href={`/${locale}/catalog/${product.categorySlug}/${product.slug}?mode=3d`}
-            className="group flex-shrink-0 inline-flex items-center gap-2 border border-gold/30 hover:border-gold/70 hover:bg-gold/8 text-gold/70 hover:text-gold font-body text-[10px] uppercase tracking-[0.22em] px-4 py-2 rounded-full transition-all duration-300"
-          >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
-            </svg>
-            3D
-          </Link>
+          {false && (
+            <Link
+              href={`/${locale}/catalog/${product.categorySlug}/${product.slug}?mode=3d`}
+              className="group flex-shrink-0 inline-flex items-center gap-2 border border-gold/30 hover:border-gold/70 hover:bg-gold/8 text-gold/70 hover:text-gold font-body text-[10px] uppercase tracking-[0.22em] px-4 py-2 rounded-full transition-all duration-300"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+              3D
+            </Link>
+          )}
         </div>
 
         {/* Collection picker — all screens */}
