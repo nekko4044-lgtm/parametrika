@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     'max-snippet': -1,
     'max-video-preview': -1,
   },
+  verification: {
+    other: {
+      'yandex-verification': '52e7b65a7d01c8ad',
+    },
+  },
   openGraph: {
     type: 'website',
     siteName: 'Parametrika',
