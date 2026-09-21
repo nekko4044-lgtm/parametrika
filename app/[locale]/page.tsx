@@ -145,8 +145,8 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       />
       <Hero />
       <Marquee />
-      <About />
       <CategoryGrid />
+      <About />
       <Contact />
       <Footer />
       <WhatsAppButton />

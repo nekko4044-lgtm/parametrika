@@ -5,6 +5,12 @@ import { getAllArticleSlugs } from '@/lib/articles'
 const BASE = 'https://parametrika.ae'
 const LOCALES = ['en', 'ru', 'ar']
 
+// The static export serves the canonical URLs with trailing slashes. Keep the
+// sitemap and hreflang URLs on those final, indexable addresses too.
+function canonicalUrl(locale: string, path: string): string {
+  return `${BASE}/${locale}${path}/`
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const articleSlugs = getAllArticleSlugs()
 
@@ -27,10 +33,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const locale of LOCALES) {
     for (const { path, priority } of paths) {
       const languages = Object.fromEntries(
-        LOCALES.map(l => [l, `${BASE}/${l}${path}`])
+        LOCALES.map(l => [l, canonicalUrl(l, path)])
       )
       entries.push({
-        url: `${BASE}/${locale}${path}`,
+        url: canonicalUrl(locale, path),
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority,
